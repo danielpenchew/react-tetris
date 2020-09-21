@@ -23,7 +23,9 @@ steps:
 - task: CopyFiles@2
   inputs:
     TargetFolder: '$(build.artifactstagingdirectory)'
-
+    contents: |
+      **
+      !+(node_modules|.git)/**
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
   inputs:
