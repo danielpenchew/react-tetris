@@ -23,6 +23,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     targetFolder: '$(Build.ArtifactStagingDirectory)'    
+    contents: '!$(System.DefaultWorkingDirectory)/node_modules/**'
 
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
